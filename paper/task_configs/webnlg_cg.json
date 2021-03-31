@@ -1,0 +1,41 @@
+{
+    "name": "webnlg_cg",
+    "data_shape": [
+        {
+            "id": "<data>",
+            "type": "special",
+            "learn": false
+        },
+        {
+            "id": "modifiedtripleset",
+            "type": "text",
+            "learn": false
+        },
+        {
+            "id": "<text>",
+            "type": "special",
+            "learn": false
+        },
+        {
+            "id": "text",
+            "type": "text",
+            "learn": true,
+            "metrics": [
+                "match",
+                "bleu"
+            ]
+        }
+    ],
+    "extra_fields": [
+        "category_type",
+        "category",
+        "num_triples"
+    ],
+    "metrics_fields": [
+        "category_type",
+        "category",
+        "num_triples"
+    ],
+    "token_typing": "coarse_grained"
+}
+

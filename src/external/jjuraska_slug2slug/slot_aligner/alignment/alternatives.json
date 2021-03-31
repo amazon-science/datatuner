@@ -1,0 +1,258 @@
+{
+  "genres": {
+    "action adventure": [
+      [
+        "action",
+        "adventur"
+      ]
+    ],
+    "adventure": [
+      "adventur"
+    ],
+    "driving racing": [
+      "driving",
+      "drive",
+      "racing",
+      "race"
+    ],
+    "fighting": [
+      "fight"
+    ],
+    "mmorpg": [
+      "massive"
+    ],
+    "platformer": [
+      "platforming"
+    ],
+    "real time strategy": [
+      "real time",
+      "rts"
+    ],
+    "role playing": [
+      "roleplaying",
+      "role play",
+      "rpg",
+      "rpgs"
+    ],
+    "shooter": [
+      "shoot",
+      "fps"
+    ],
+    "simulation": [
+      "simulat",
+      "sim"
+    ],
+    "strategy": [
+      "strateg"
+    ],
+    "tactical": [
+      "tactic"
+    ],
+    "trivia board game": [
+      "trivia",
+      "board"
+    ],
+    "turn based strategy": [
+      "turn based"
+    ],
+    "vehicular combat": [
+      [
+        "vehic",
+        "combat"
+      ]
+    ]
+  },
+  "playerperspective": {
+    "first person": [
+      "fps"
+    ],
+    "bird view": [
+      "top down"
+    ]
+  },
+  "rating": {
+    "excellent": [
+      "5 out of",
+      "5 star",
+      "adore",
+      "amazing",
+      "attract",
+      "awesome",
+      "best",
+      "fantastic",
+      "favorite",
+      "five",
+      "great",
+      "high",
+      "highly",
+      "love",
+      "loved",
+      "loving",
+      "quality",
+      "special",
+      "superb",
+      "top",
+      "unique"
+    ],
+    "good": [
+      "acclaim",
+      "cool",
+      "enjoy",
+      "fun",
+      "like",
+      "liked",
+      "positive",
+      "solid",
+      "well"
+    ],
+    "average": [
+      "3 out of",
+      "3 star",
+      "all right",
+      "alright",
+      "decent",
+      "kinda",
+      "kind of",
+      "lukewarm",
+      "mediocre",
+      "meh",
+      "middle",
+      "middling",
+      "mixed",
+      "moderate",
+      "ok",
+      "okay",
+      "ordinary",
+      "so so",
+      "three",
+      "unimpress"
+    ],
+    "poor": [
+      "1 out of",
+      "1 star",
+      "avoid",
+      "bad",
+      "badly",
+      "boring",
+      "detest",
+      "disappoint",
+      "dislike",
+      "dull",
+      "hate",
+      "hated",
+      "hating",
+      "lackluster",
+      "lacking",
+      "loathe",
+      "low",
+      "lowly",
+      "negative",
+      "one",
+      "poorly",
+      "underwhelm",
+      "wrong"
+    ]
+  },
+  "esrb": {
+    "e ( for everyone )": [
+      "e rated",
+      "rated e",
+      "e rating",
+      "rating e",
+      "everyone",
+      "all"
+    ],
+    "e 10+ ( for everyone 10 and older )": [
+      "e10+",
+      "e 10+",
+      "e 10 plus",
+      "everyone 10",
+      "everyone above",
+      "everyone over",
+      "everyone older"
+    ],
+    "t ( for teen )": [
+      "t rated",
+      "rated t",
+      "t rating",
+      "rating t",
+      "teen",
+      "teens",
+      "teenagers"
+    ],
+    "m ( for mature )": [
+      "m rated",
+      "rated m",
+      "m rating",
+      "rating m",
+      "mature",
+      "adult"
+    ]
+  },
+  "pricerange": {
+    "cheap": [
+      "less than \u00a320",
+      "inexpensive",
+      "affordable",
+      "low",
+      "lower",
+      "budget",
+      "bargain"
+    ],
+    "moderate": [
+      "\u00a320-25",
+      "average",
+      "reasonable"
+    ],
+    "high": [
+      "more than \u00a330",
+      "expensive",
+      "costly",
+      "pricey",
+      "high",
+      "higher"
+    ],
+    "less than \u00a320": [
+      "cheap",
+      "inexpensive",
+      "affordable",
+      "low",
+      "budget"
+    ],
+    "\u00a320-25": [
+      "moderate",
+      "average",
+      "reasonable"
+    ],
+    "more than \u00a330": [
+      "high",
+      "expensive",
+      "costly",
+      "pricey",
+      "high"
+    ]
+  },
+  "area": {
+    "city centre": [
+      "center",
+      "centre",
+      "downtown",
+      [
+        "middle",
+        "city"
+      ],
+      [
+        "middle",
+        "town"
+      ]
+    ],
+    "riverside": [
+      "river"
+    ]
+  },
+  "type": {
+    "television": [
+      "tv"
+    ]
+  }
+}

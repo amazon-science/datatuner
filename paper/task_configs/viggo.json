@@ -1,0 +1,29 @@
+{
+    "name": "viggo",
+    "data_shape": [
+        {
+            "id": "<data>",
+            "type": "special",
+            "learn": false
+        },
+        {
+            "id": "new_mr",
+            "type": "text",
+            "learn": false
+        },
+        {
+            "id": "<text>",
+            "type": "special",
+            "learn": false
+        },
+        {
+            "id": "ref",
+            "type": "text",
+            "learn": true,
+            "metrics": [
+                "match",
+                "bleu"
+            ]
+        }
+    ]
+}

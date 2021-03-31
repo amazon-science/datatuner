@@ -1,0 +1,30 @@
+{
+    "name": "ldc_cg",
+    "data_shape": [
+        {
+            "id": "<data>",
+            "type": "special",
+            "learn": false
+        },
+        {
+            "id": "linearized_amr",
+            "type": "text",
+            "learn": false
+        },
+        {
+            "id": "<text>",
+            "type": "special",
+            "learn": false
+        },
+        {
+            "id": "answer_text",
+            "type": "text",
+            "learn": true,
+            "metrics": [
+                "match",
+                "bleu"
+            ]
+        }
+    ],
+    "token_typing": "coarse_grained"
+}
