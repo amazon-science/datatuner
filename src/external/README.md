@@ -3,7 +3,9 @@
 This directory contains subsections of other repositories who provide tokenization and evaluation scripts for the data sets used. 
 The required code is included here for ease of reproducibility.
 
-## Sources
+See also [NOTICE.txt](../../NOTICE.txt).
+
+### Sources
 
 **/jjuraska_slug2slug** from https://github.com/jjuraska/slug2slug
 
