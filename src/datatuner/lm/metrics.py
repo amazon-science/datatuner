@@ -3,6 +3,7 @@ import difflib
 import json
 import logging
 import os
+import sys
 from collections import OrderedDict
 from itertools import groupby
 from pathlib import Path
@@ -20,7 +21,7 @@ logger = logging.getLogger(__file__)
 THIS_DIR = Path(os.path.dirname(os.path.realpath(__file__)))
 
 E2E_METRICS_FOLDER = THIS_DIR / "../../../paper/tmp/e2e-metrics"
-PYTHON_BIN = "/home/ec2-user/miniconda3/envs/finetune/bin/python"
+PYTHON_BIN = sys.executable
 
 
 def get_str_diff(case_a, case_b):

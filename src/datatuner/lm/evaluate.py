@@ -4,6 +4,7 @@ import json
 import logging
 import math
 import random
+import os
 from argparse import ArgumentParser
 from collections import defaultdict
 from pathlib import Path
@@ -31,6 +32,9 @@ from tqdm import tqdm
 
 logger = logging.getLogger(__file__)
 DEBUG = logging.getLogger().getEffectiveLevel() == logging.DEBUG
+THIS_DIR = Path(os.path.dirname(os.path.realpath(__file__)))
+PACKAGE_LOCATION = f"{THIS_DIR}/../../../../"
+DATA_DIR = f"{PACKAGE_LOCATION}/datatuner/data"
 
 
 def top_filtering(probs, tokenizer, top_k=0, top_p=0.0, dec_dropout=0, threshold=0, seed=42, filter_value=0):
@@ -720,11 +724,11 @@ def setup(args):
         dataset = args.cons_classifier
         cons_classifier = ConsistencyClassifier(
             {
-                "model_name_or_path": f"/home/ec2-user/{dataset}_consistency_roberta-large_lower",
+                "model_name_or_path": f"{PACKAGE_LOCATION}/{dataset}_consistency_roberta-large_lower",
                 "model_type": "roberta",
                 "model_name": "roberta-large",
                 "task_name": "mnli",
-                "data_dir": f"/home/ec2-user/DataTuner/data/{dataset}_consistency/",
+                "data_dir": f"{PACKAGE_LOCATION}/{dataset}_consistency_roberta-large_lower",
                 "output_dir": "tmp",
                 "no_cuda": True,
                 "overwrite_cache": True,
@@ -748,7 +752,7 @@ def setup(args):
 
 
 @st.cache(show_spinner=False, allow_output_mutation=True, persist=False)
-def load_test_data(filename="/home/ec2-user/DataTuner/data/ldc/test.json", max_items=100):
+def load_test_data(filename=f"{DATA_DIR}/ldc/test.json", max_items=100):
     """Load test data from file"""
     logger.info("loading test data")
     examples = json.load(open(filename))[:max_items]
@@ -885,7 +889,9 @@ def run():
         if False:
             args.reranker = st.sidebar.selectbox(
                 "Reranker",
-                ["/home/ec2-user/data/distilgpt2/", "/home/ec2-user/data/gpt2/", "/home/ec2-user/data/gpt2-medium/"],
+                [f"{DATA_DIR}/distilgpt2/",
+                 f"{DATA_DIR}/gpt2/",
+                 f"{DATA_DIR}/gpt2-medium/"],
                 -1,
                 lambda x: " ".join(list(get_run_info(client, x).values())),
             )

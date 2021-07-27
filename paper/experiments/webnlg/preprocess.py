@@ -189,8 +189,8 @@ def run_parser(set_path, classification_data):
 
 def run(
     in_folder="./tmp/webnlg/data/v1.4/en/",
-    out_folder="DataTuner/data/webnlg",
-    classification_dir="DataTuner/data/webnlg_consistency",
+    out_folder="datatuner/data/webnlg",
+    classification_dir="datatuner/data/webnlg_consistency",
     output_classification_data=True,
 ):
     """Run the webnlg data formatting task"""

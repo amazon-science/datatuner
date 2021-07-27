@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="DataTuner",
+    name="datatuner",
     version="1.0",
     description="Natural Language Generation Library",
     packages=find_packages(),

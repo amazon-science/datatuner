@@ -11,7 +11,7 @@ python=~/miniconda3/envs/finetune/bin/python
 
 LM_MODELS_DIR=~/trained_lms
 CLASSIFIER_MODELS_DIR=~/trained_classifiers
-REPO_FOLDER=DataTuner
+REPO_FOLDER=datatuner
 TMP_DATA_FOLDER=./tmp
 DATA_FOLDER=../data
 
