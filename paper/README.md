@@ -71,7 +71,7 @@ As described in the paper, there are two system variants we can train:
 The third system variant `DataTuner_FC` reuses the trained `DataTuner_No_FC` and adds the fidelity classifier during the evaluation stage. Hence, the results for that system variant are the ones produced in the section [Run the Trained Classifiers on Generated Data](#run-the-trained-classifiers-on-generated-Data)
 
 Arguments for the script (in order):
-- `DATASET`: dataset name (from `e2e`, `viggo`, `ldc`, and `e2e`)
+- `DATASET`: dataset name (from `e2e`, `viggo`, `ldc`, and `webnlg`)
 - `SYSTEM`: system id (from `DataTuner_No_FC`, `DataTuner_No_FC_No_FS`)
 - `OUTPUT_FOLDER`: folder where the model will be written
 - `NUM_PARALLEL`: number of processes to run in parallel (usually the number of GPUs)
