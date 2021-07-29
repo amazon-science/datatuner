@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import sys
 from collections import Counter
 from pathlib import Path
 from shutil import copyfile
@@ -10,13 +11,13 @@ import numpy as np
 import pandas as pd
 from datatuner.classification.consistency_classifier import dataset_fields
 from datatuner.lm.metrics import bleu
-from datatuner.lm.runs_data import runs_data
 from fire import Fire
 from scipy import stats
 from tqdm import tqdm
 
 logger = logging.getLogger(__name__)
 THIS_DIR = Path(os.path.dirname(os.path.realpath(__file__)))
+PACKAGE_LOCATION = f"{THIS_DIR}/../../../../"
 
 
 def generate(
@@ -26,8 +27,8 @@ def generate(
         model_folder=None,
         model_type="roberta",
         model_name="roberta-large",
-        python_location="/home/ec2-user/miniconda3/envs/finetune/bin/python",
-        classifier_script="/home/ec2-user/DataTuner/src/datatuner/classification/run_classifier.py",
+        python_location=sys.executable,
+        classifier_script=THIS_DIR / "run_classifier.py",
         correct_label="accurate",
         text_key=None,
         data_key=None,
@@ -64,7 +65,7 @@ def generate(
     df.to_csv(data_folder / "test.tsv", sep="|", index=False, columns=["label", "data", "text"])
 
     if model_folder is None:
-        model_folder = f"/home/ec2-user/{dataset}_consistency_roberta-large_lower"
+        model_folder = f"{PACKAGE_LOCATION}/{dataset}_consistency_roberta-large_lower"
     model_folder = Path(model_folder)
 
     # Run the classifier command
@@ -117,7 +118,7 @@ def rerank_and_eval(
 
     in_file = Path(in_file)
     if model_folder is None:
-        model_folder = f"/home/ec2-user/{dataset}_consistency_roberta-large_lower"
+        model_folder = f"{PACKAGE_LOCATION}/{dataset}_consistency_roberta-large_lower"
 
     model_folder = Path(model_folder)
     if text_key is None:
@@ -236,40 +237,6 @@ def rerank_and_eval(
         del item["reranked_pred_prob"]
         del item["reranked_pred"]
     json.dump(data, open(out_folder / "reranked.json", "w"), indent=2)
-
-
-def eval_all(
-        classify=False,
-        ignore_existing=True,
-        systems=["systemNoFc", "systemNoFcNoFs", "systemFcPost"],
-):
-    for system in systems:
-        for dataset in ["viggo", "ldc", "webnlg", "e2e"]:
-
-            print(f"dataset: {dataset}")
-            run = runs_data[dataset]
-            print(f"run: {run}")
-            if system not in run:
-                continue
-            directory = (
-                f"/home/ec2-user/mlflow/{run['id']}/{run[system]['run_id']}"
-                f"/artifacts/evaluation/{run[system]['eval_folder']}"
-            )
-            directory = Path(directory)
-            classified_exists = (directory / "classified.json").exists()
-            if classified_exists and ignore_existing:
-                print(f"{dataset} exists")
-                continue
-
-            copyfile(
-                f"/home/ec2-user/DataTuner/data/{dataset}_consistency/labels.txt",
-                f"{directory}/labels.txt",
-            )
-            in_file = f"{directory}/generated.json"
-            if classify or not classified_exists:
-                generate(in_file, dataset)
-            else:
-                rerank_and_eval(in_file, dataset)
 
 
 systems = ["systemFcPost", "systemNoFc", "systemNoFcNoFs"]
