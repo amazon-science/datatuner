@@ -37,7 +37,7 @@ cd paper
 
 
 The first step is to update the configuration file [config.sh](config.sh) to point it to the correct directories and files. 
-The main change that must be done is fixing the folders for the LDC2017T10 and the ViGGO dataset. These datasets are available from https://catalog.ldc.upenn.edu/LDC2017T10 and https://nlds.soe.ucsc.edu/viggo respectively. 
+The main change that must be done is fixing the folders for the LDC2017T10 and the ViGGO dataset. These datasets are available (for a fee) from https://catalog.ldc.upenn.edu/LDC2017T10 and https://nlds.soe.ucsc.edu/viggo respectively. 
 
 
 You can leave the rest of the default parameters as they are.
